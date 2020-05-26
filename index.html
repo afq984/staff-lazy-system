@@ -1,0 +1,214 @@
+<html>
+
+<style>
+    h1 {
+        text-align: center;
+        font-size: 16pt;
+        text-decoration: underline;
+    }
+
+    body {
+        font-size: 12pt;
+    }
+
+    main {
+        width: calc(21cm - 1.27cm * 2);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    small {
+        font-size: 10pt;
+    }
+
+    table {
+        border-collapse: collapse;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    td {
+        border: 1px solid black;
+        padding: 0.3em;
+    }
+
+    td:nth-child(1) {
+        text-align: center;
+        width: calc(5.32cm - 0.6em);
+    }
+
+    td:nth-child(2) {
+        width: calc(10.92cm - 0.6em);
+        max-width: calc(10.92cm - 0.6em);
+    }
+
+    td>p {
+        margin: 0;
+    }
+
+    .fill {
+        display: inline-block;
+        min-width: 4em;
+        text-align: center;
+        border-bottom: 1px solid black;
+    }
+
+    .toggle {
+        cursor: pointer;
+    }
+
+    @media print {
+        body {
+            width: 100%;
+        }
+    }
+
+    @page {
+        size: A4;
+    }
+</style>
+
+<body>
+    <main>
+        <h1>研究獎助生學習計畫書</h1>
+        <div style="padding-right: 0.53cm; text-align: right; padding: 0.3em;">
+            <small>107.12.11 版</small>
+        </div>
+        <table>
+            <tr>
+                <td>研究計畫編號</td>
+                <td id="no" class="edit"></td>
+            </tr>
+            <tr>
+                <td>
+                    研究計畫名稱
+                </td>
+                <td id="name" class="edit"></td>
+            </tr>
+            <tr>
+                <td>
+                    研究獎助生姓名/學號
+                </td>
+                <td id="me" class="edit"></td>
+            </tr>
+            <tr>
+                <td>
+                    指導教授姓名
+                </td>
+                <td id="instructor" class="edit"></td>
+            </tr>
+            <tr>
+                <td>
+                    參與本計畫之期限
+                </td>
+                <td id="daterange" class="edit"></td>
+            </tr>
+            <tr>
+                <td>在本計畫主要參與之學習內容<br>
+                    (可複選)
+                </td>
+                <td>
+                    <p class="toggle">□ 1.研究課題的設計、準備、修正與執行。</p>
+                    <p class="toggle">□ 2.資料、數據的收集、整理、歸檔、分析與圖表製作。</p>
+                    <p class="toggle">□ 3.成果報告、期刊論文或專利等的撰寫與發表。</p>
+                    <p class="toggle">□ 4.公益活動與專案的策畫與參與。</p>
+                    <p class="toggle">□ 5.團隊合作與領導能力的培養。</p>
+                    <p class="toggle">□ 6.指導後進，教學實習，達到知識與經驗的傳承。</p>
+                    <p class="toggle">□ 7.學習內容與畢業論文相關。</p>
+                    <p>□ 8.其他以習得新知能為主要目的的活動。(請說明)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>老師指導方式<br>
+                    (可複選)
+                </td>
+                <td>
+                    <p class="toggle">□ 1.課堂教學。</p>
+                    <p class="toggle">□ 2.建議研究方向，解決研究問題。</p>
+                    <p class="toggle">□ 3.協調團隊合作與分工。</p>
+                    <p class="toggle">□ 4.定期研究討論會議。</p>
+                    <p class="toggle">□ 5.修改口頭與書面論文報告。</p>
+                    <p class="toggle">□ 6.安排參與學術性活動與校外課程。</p>
+                    <p>□ 7.其他方式。(請說明)</p>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    研究獎助生簽名/日期
+                </td>
+                <td>
+                    <br>
+                    <span style="text-align: right;display: block;padding-right: 2em;">
+                        <span id="signYear1"></span>年&#x3000;
+                        <span id="signMonth1"></span>月&#x3000;
+                        <span id="signDate1"></span>日</span>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    指導老師簽名/日期
+                </td>
+                <td>
+                    <br>
+                    <span style="text-align: right;display: block;padding-right: 2em;">
+                        <span id="signYear2"></span>年&#x3000;
+                        <span id="signMonth2"></span>月&#x3000;
+                        <span id="signDate2"></span>日</span>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" style="text-align: left;">
+                    <p>後續報支經費系統(核發金額類型)：</p>
+                    <p><span class="toggle">■人事室人員處理表系統(按月)</span>：$<span class="fill edit" id=""></span>/月</p>
+                    <p><span class="toggle">□主計室領據系統(按時)</span>:$<span class="fill"></span>/時</p>
+                    <p><span class="toggle">□教務處研究生獎助金發放系統(按時或按月)</span>:$<span class="fill"></span>/時 或 $<span class="fill"></span>/月</p>
+                </td>
+            </tr>
+        </table>
+        <div style="padding-left: 0.85cm;">
+            <small>
+                <br>
+                1.請雙方參酌研發處「研發成果歸屬表」(http://140.114.39.241/Pages.aspx?pid=485)，就上述所生之智<br>
+                &nbsp;&nbsp;慧財產權歸屬約定之。<br>
+                2.本計畫書經106年9月15日研究計畫相關獎助生及兼任助理類型分流委員會通過，並於107年12月11日<br>
+                &nbsp;&nbsp;會議後修訂。<br>
+                3.本校之相關規定如下:<br>
+                &nbsp;&nbsp;(1)國立清華大學研發成果管理辦法<br>
+                &nbsp;&nbsp;(2)國立清華大學獎助生權益保障處理要點<br>
+                4.凡隸屬研究獎助生(含陸生、僑生及其他符合研究獎助生資格之人員)皆適用此表格。
+            </small>
+        </div>
+    </main>
+
+    <script>
+        window.onload = function () {
+            const params = new URLSearchParams(window.location.search);
+            for (let element of document.querySelectorAll(".edit")) {
+                element.textContent = params.get(element.id);
+                element.contentEditable = "true";
+            }
+
+            for (let p of document.querySelectorAll(".toggle")) {
+                p.onclick = function () {
+                    var s = this.textContent;
+                    if (s[0] == "■") {
+                        s = "□" + s.slice(1);
+                    } else if (s[0] == "□") {
+                        s = "■" + s.slice(1);
+                    }
+                    this.textContent = s;
+                };
+            }
+
+            var d = new Date;
+            document.querySelector("#signYear1").textContent = d.getFullYear();
+            document.querySelector("#signMonth1").textContent = ("0" + (d.getMonth() + 1)).slice(-2);
+            document.querySelector("#signDate1").textContent = ("0" + d.getDate()).slice(-2);
+            document.querySelector("#signYear2").textContent = d.getFullYear();
+            document.querySelector("#signMonth2").textContent = ("0" + (d.getMonth() + 1)).slice(-2);
+            document.querySelector("#signDate2").textContent = ("0" + d.getDate()).slice(-2);
+        };
+    </script>
+</body>
+
+</html>
